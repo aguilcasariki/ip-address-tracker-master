@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const IpInput = ({ handleSubmit }) => {
+const IpInput = ({ handleSubmit, handleChange }) => {
   return (
     <div className="input_background w-full md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-96 flex flex-col items-center pb-20 ">
       <h1 className="iunput_title text-white mt-6 text-xl">
@@ -9,9 +9,10 @@ const IpInput = ({ handleSubmit }) => {
       <form onSubmit={handleSubmit} className="mt-6">
         <div className="form_wrapper flex items-center">
           <input
+            onChange={handleChange}
             type="text"
             placeholder="Search for any IP address or domain"
-            className="input_ip rounded-lg py-2 px-3 rounded-e-none"
+            className="input_ip rounded-lg py-2 px-3 rounded-e-none shadow"
             name="ip_address"
             pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?:(?:(?:[0-9A-Fa-f]{1,4}):){6}|(?=(?:[0-9A-Fa-f]{0,4}:){0,6}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.?(?!$))([0-9A-Fa-f]{0,4}:[0-9A-Fa-f]{0,4}|:))((([0-9A-Fa-f]{0,4}:){0,5}|:)(:[0-9A-Fa-f]{0,4}){1,5}|:))%?[0-9a-zA-Z]{0,}$"
             required
@@ -40,4 +41,5 @@ export default IpInput;
 
 IpInput.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
