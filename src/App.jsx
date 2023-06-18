@@ -1,15 +1,18 @@
 import "./App.css";
-import IpCard from "./components/IpCard/IpCard";
-import IpInput from "./components/IpInput/IpInput";
-import Map from "./components/Map/Map";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "./App.css";
+
+import Home from "./pages/Home";
+
+// Create a client
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
-      <IpInput />
-      <IpCard />
-      <Map />
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
   );
 }
 
