@@ -2,30 +2,34 @@ import PropTypes from "prop-types";
 
 const IpInput = ({ handleSubmit }) => {
   return (
-    <div className="input_background md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-56 d-flex">
-      <h1 className="iunput_title">IP Address Tracker</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="input_container">
+    <div className="input_background md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-56 flex flex-col items-center ">
+      <h1 className="iunput_title text-white mt-6 text-xl">
+        IP Address Tracker
+      </h1>
+      <form onSubmit={handleSubmit} className="mt-6">
+        <div className="form_wrapper flex items-center">
           <input
             type="text"
             placeholder="Search for any IP address or domain"
-            className="input_ip"
+            className="input_ip rounded-lg py-2 px-3 rounded-e-none"
             name="ip_address"
             pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?:(?:(?:[0-9A-Fa-f]{1,4}):){6}|(?=(?:[0-9A-Fa-f]{0,4}:){0,6}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.?(?!$))([0-9A-Fa-f]{0,4}:[0-9A-Fa-f]{0,4}|:))((([0-9A-Fa-f]{0,4}:){0,5}|:)(:[0-9A-Fa-f]{0,4}){1,5}|:))%?[0-9a-zA-Z]{0,}$"
             required
           />
-          <div className="input_search_container">
-            <button type="submit" className="search_btn bg-very-dark-gray">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
-                <path
-                  fill="none"
-                  stroke="#FFF"
-                  strokeWidth="3"
-                  d="M2 1l6 6-6 6"
-                />
-              </svg>
-            </button>
-          </div>
+
+          <button
+            type="submit"
+            className="search_btn bg-very-dark-gray p-3.5 rounded-lg rounded-s-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+              <path
+                fill="none"
+                stroke="#FFF"
+                strokeWidth="3"
+                d="M2 1l6 6-6 6"
+              />
+            </svg>
+          </button>
         </div>
       </form>
     </div>

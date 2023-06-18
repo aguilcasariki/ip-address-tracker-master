@@ -13,8 +13,9 @@ const markerIcon = new Icon({
 const Map = ({ position }) => {
   return (
     <MapContainer
+      key={position.join(",")}
       center={position}
-      zoom={13}
+      zoom={10}
       scrollWheelZoom={false}
       className="w-screen h-full"
       zoomControl={false}

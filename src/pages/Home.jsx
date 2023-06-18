@@ -6,6 +6,7 @@ import { useState } from "react";
 import IpCard from "../components/IpCard/IpCard";
 
 const Home = () => {
+  const [inputValue, setInputValue] = useState("");
   const [ip, setIp] = useState("");
 
   const { isLoading, data, isError, refetch } = useQuery({
@@ -16,15 +17,17 @@ const Home = () => {
   });
 
   const handleChange = (event) => {
-    setIp(event.target.value);
+    setInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setIp(inputValue.trim());
     refetch();
   };
-  console.log(data.lat);
+
+  const center = data ? [data.lat, data.lon] : [34.0648, -118.086];
   const cardData = [
     {
       title: "IP ADDRESS",
@@ -50,7 +53,7 @@ const Home = () => {
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error: {isError.message}</p>}
       <IpCard cardData={cardData} />
-      <Map center={center} />
+      <Map position={center} />
     </div>
   );
 };
