@@ -15,11 +15,10 @@ const Map = ({ position }) => {
     <MapContainer
       key={position.join(",")}
       center={position}
-      zoom={10}
+      zoom={50}
+      className="w-screen h-full -mt-32 -z-50"
       scrollWheelZoom={false}
-      className="w-screen h-full"
       zoomControl={false}
-      ic
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

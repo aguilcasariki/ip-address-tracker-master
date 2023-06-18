@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const IpInput = ({ handleSubmit }) => {
   return (
-    <div className="input_background md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-56 flex flex-col items-center ">
+    <div className="input_background w-full md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-96 flex flex-col items-center pb-20 ">
       <h1 className="iunput_title text-white mt-6 text-xl">
         IP Address Tracker
       </h1>

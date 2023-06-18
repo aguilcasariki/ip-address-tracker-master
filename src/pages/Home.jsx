@@ -10,7 +10,6 @@ const Home = () => {
   const [ip, setIp] = useState("");
 
   const { isLoading, data, isError, refetch } = useQuery({
-    enabled: false,
     queryKey: ["geoData", ip],
     queryFn: () => fetchIpGeoData(ip),
     refetchOnWindowFocus: false,
@@ -48,7 +47,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="h-screen">
+    <div className="h-screen flex flex-col items-center">
       <IpInput handleChange={handleChange} handleSubmit={handleSubmit} />
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error: {isError.message}</p>}
