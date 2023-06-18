@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const IpInput = ({ handleChange, handleSubmit }) => {
+const IpInput = ({ handleSubmit }) => {
   return (
-    <div className="input_background md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-56">
+    <div className="input_background md:bg-hero-pattern bg-hero-pattern-mobile bg-no-repeat bg-cover h-56 d-flex">
       <h1 className="iunput_title">IP Address Tracker</h1>
       <form onSubmit={handleSubmit}>
         <div className="input_container">
@@ -10,7 +10,6 @@ const IpInput = ({ handleChange, handleSubmit }) => {
             type="text"
             placeholder="Search for any IP address or domain"
             className="input_ip"
-            onChange={handleChange}
             name="ip_address"
             pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?:(?:(?:[0-9A-Fa-f]{1,4}):){6}|(?=(?:[0-9A-Fa-f]{0,4}:){0,6}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.?(?!$))([0-9A-Fa-f]{0,4}:[0-9A-Fa-f]{0,4}|:))((([0-9A-Fa-f]{0,4}:){0,5}|:)(:[0-9A-Fa-f]{0,4}){1,5}|:))%?[0-9a-zA-Z]{0,}$"
             required
@@ -36,6 +35,5 @@ const IpInput = ({ handleChange, handleSubmit }) => {
 export default IpInput;
 
 IpInput.propTypes = {
-  handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
