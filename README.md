@@ -1,6 +1,6 @@
 # IP address tracker
 
-IP Address Tracker
+IP ADDRESS TRACKER
 
 ## Table of contents
 
@@ -22,7 +22,7 @@ IP Address Tracker
 
 ### Screenshot
 
-!App Screenshot(././images/appScreenshot.png)
+![App Screenshot](./images/appScreenshot.png)
 
 ### Built with
 
@@ -31,7 +31,7 @@ IP Address Tracker
 - Flexbox
 - Mobile-first workflow
 - React.js(https://react.dev/)
-- TailwindCSS(tailwindcss.com)
+- TailwindCSS(tailwindcss.com/)
 - React Query(https://tanstack.com/)
 - Ip-Api(https://ip-api.com/)
 - React Leaflet(https://react-leaflet.js.org/)
