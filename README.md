@@ -31,7 +31,7 @@ IP ADDRESS TRACKER
 - Flexbox
 - Mobile-first workflow
 - React.js(https://react.dev/)
-- TailwindCSS(tailwindcss.com/)
+- TailwindCSS(https://tailwindcss.com/)
 - React Query(https://tanstack.com/)
 - Ip-Api(https://ip-api.com/)
 - React Leaflet(https://react-leaflet.js.org/)
