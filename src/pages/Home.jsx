@@ -4,6 +4,7 @@ import Map from "../components/Map/Map";
 import fetchIpGeoData from "../api/fetchIpGeoData";
 import { useState } from "react";
 import IpCard from "../components/IpCard/IpCard";
+import useTimezoneConvert from "../hooks/useTimezoneConvert";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -25,24 +26,30 @@ const Home = () => {
     setIp(inputValue.trim());
     refetch();
   };
-
+  const timezones = useTimezoneConvert(data?.timezone);
   const center = data ? [data.lat, data.lon] : [34.0648, -118.086];
   const cardData = [
     {
       title: "IP ADDRESS",
-      info: data?.query ?? "-",
+      info: data?.query ?? "Loading...",
     },
     {
       title: "LOCATION",
-      info: data ? `${data.city}, ${data.region} ${data.zip}` : "-",
+      info: data
+        ? `${data.city},${data.region} 
+      ${data.zip}`
+        : "Loading...",
     },
     {
       title: "TIMEZONE",
-      info: data?.timezone ?? "-",
+      info: timezones
+        ? `${timezones[0]}/
+      ${timezones[1]}`
+        : "Loading...",
     },
     {
       title: "ISP",
-      info: data?.isp ?? "-",
+      info: data?.isp ?? "Loading...",
     },
   ];
 

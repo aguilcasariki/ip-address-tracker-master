@@ -16,7 +16,7 @@ const Map = ({ position }) => {
       key={position.join(",")}
       center={position}
       zoom={50}
-      className="w-screen h-full mt-[-7.2rem] -z-50"
+      className="w-screen h-full md:mt-[-4.2rem] mt-[-7.8rem] -z-50"
       scrollWheelZoom={false}
       zoomControl={false}
     >
