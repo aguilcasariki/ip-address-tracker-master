@@ -49,11 +49,17 @@ const Home = () => {
       },
       {
         title: "LOCATION",
-        info: data ? `${data.city}, ${data.region} ${data.zip}` : "Loading...",
+        info: data
+          ? `${data.city}, ${data.region} 
+        ${data.zip}`
+          : "Loading...",
       },
       {
         title: "TIMEZONE",
-        info: timezones ? `${timezones[0]}/${timezones[1]}` : "Loading...",
+        info: timezones
+          ? `${timezones[0]}
+        ${timezones[1]}`
+          : "Loading...",
       },
       {
         title: "ISP",
